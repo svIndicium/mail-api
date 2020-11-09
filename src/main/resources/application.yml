@@ -1,0 +1,29 @@
+
+spring:
+  #Application name
+  application.name: "mail-microservice"
+  #Mailserver config
+  mail:
+    host: ${SMTP_HOST}
+    username: ${MAIL_ADDRESS}
+    password: ${MAIL_PASSWORD}
+    port: 465
+    test-connection: true
+    properties.mail:
+        transport.protocol: "smtp"
+        smtp:
+          auth: true
+          socketFactory.port :  465
+          socketFactory.class :  "javax.net.ssl.SSLSocketFactory"
+  #Database config
+  jpa:
+    properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
+    hibernate.ddl-auto: update
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: "org.postgresql.Driver"
+
+  #Actuator
+management.endpoints.web.exposure.include: "*"
