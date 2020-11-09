@@ -3,7 +3,6 @@ package nl.rvkit.mail.application;
 import nl.rvkit.lib.StringHelper;
 import nl.rvkit.lib.exceptions.MyMailMessageException;
 import nl.rvkit.mail.MailProperties;
-import nl.rvkit.template.persistence.Template;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -28,7 +27,7 @@ public class EmailService implements IEmailService {
     @Override
     public void sendSimpleMessage(List<String> to, String subject, String text) {
         SimpleMailMessage mail = new SimpleMailMessage();
-        mail.setFrom(properties.getEmail());
+        mail.setFrom(properties.getUsername());
         mail.setTo(to.toArray(new String[0]));
         mail.setSubject(subject);
         mail.setText(text);
@@ -40,7 +39,7 @@ public class EmailService implements IEmailService {
         MimeMessage mail = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mail, "utf-8");
         try {
-            helper.setFrom(properties.getEmail());
+            helper.setFrom(properties.getUsername());
             helper.setTo(to.toArray(new String[0]));
 
             helper.setSubject(subject);
