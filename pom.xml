@@ -8,14 +8,14 @@
         <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>nl.rvkit</groupId>
-    <artifactId>mailservice</artifactId>
+    <groupId>hu.indicium.dev</groupId>
+    <artifactId>mail</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mailservice</name>
     <description>A service to send mails !</description>
 
     <properties>
-        <java.version>15</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
