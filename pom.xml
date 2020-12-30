@@ -11,8 +11,8 @@
     <groupId>hu.indicium.dev</groupId>
     <artifactId>mail</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mailservice</name>
-    <description>A service to send mails !</description>
+    <name>Indicium Mail API</name>
+    <description>An Indicium Mail API to send mails!</description>
 
     <properties>
         <java.version>11</java.version>
